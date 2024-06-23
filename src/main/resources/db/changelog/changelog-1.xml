@@ -7,8 +7,10 @@
     <!-- Define a property for the column type -->
     <property name="varcharType" value="VARCHAR(8000)" dbms="mysql"/>
     <property name="varcharType" value="NVARCHAR(MAX)" dbms="mssql"/>
+    <property name="varcharType" value="NVARCHAR(MAX)" dbms="h2"/>
     <property name="uuidType" value="BINARY(16)" dbms="mysql"/>
     <property name="uuidType" value="UNIQUEIDENTIFIER" dbms="mssql"/>
+    <property name="uuidType" value="UUID" dbms="h2"/>
 
     <changeSet id="create-food-table" author="your-name">
         <createTable tableName="food">

@@ -1,10 +1,9 @@
-package net.planetroettger.macronutrients.dgs;
+package net.planetroettger.macronutrients.api.graphql;
 
 import com.netflix.graphql.dgs.DgsComponent;
 import com.netflix.graphql.dgs.DgsMutation;
 import com.netflix.graphql.dgs.DgsQuery;
 import com.netflix.graphql.dgs.InputArgument;
-import net.planetroettger.macronutrients.persistence.model.FoodDao;
 import net.planetroettger.macronutrients.service.FoodService;
 import net.planetroettger.macronutrients.types.FoodDto;
 import net.planetroettger.macronutrients.types.FoodInput;
