@@ -4,13 +4,19 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
+    <!-- Define a property for the column type -->
+    <property name="varcharType" value="VARCHAR(8000)" dbms="mysql"/>
+    <property name="varcharType" value="NVARCHAR(MAX)" dbms="mssql"/>
+    <property name="uuidType" value="BINARY(16)" dbms="mysql"/>
+    <property name="uuidType" value="UNIQUEIDENTIFIER" dbms="mssql"/>
+
     <changeSet id="create-food-table" author="your-name">
         <createTable tableName="food">
-            <column name="id" type="UUID">
+            <column name="id" type="${uuidType}">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="brand" type="VARCHAR(255)"/>
-            <column name="name" type="VARCHAR(255)"/>
+            <column name="brand" type="${varcharType}"/>
+            <column name="name" type="${varcharType}"/>
         </createTable>
     </changeSet>
 

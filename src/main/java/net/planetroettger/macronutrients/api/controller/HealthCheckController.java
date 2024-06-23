@@ -1,4 +1,4 @@
-package net.planetroettger.macronutrients.controller;
+package net.planetroettger.macronutrients.api.controller;
 
 import org.springframework.boot.info.BuildProperties;
 import org.springframework.web.bind.annotation.GetMapping;

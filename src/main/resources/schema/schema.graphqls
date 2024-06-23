@@ -1,2 +1,18 @@
 type Query {
+    getFoods: [FoodDto!]!
+}
+
+type Mutation {
+    addFood(input: FoodInput!): FoodDto!
+}
+
+input FoodInput {
+    brand: String!
+    name: String!
+}
+
+type FoodDto {
+    id: ID!
+    brand: String!
+    name: String!
 }
