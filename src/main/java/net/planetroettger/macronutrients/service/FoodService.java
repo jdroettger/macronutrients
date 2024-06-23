@@ -20,8 +20,7 @@ public class FoodService {
     public FoodDto addFood(FoodInput food) {
         validateFoodInput(food);
         FoodDao foodDao = FoodDaoTransformer.transformInputToDao(food);
-        foodDao = foodRepository.save(foodDao);
-        return FoodDaoTransformer.transformDaoToDto(foodDao);
+        return FoodDaoTransformer.transformDaoToDto(foodRepository.save(foodDao));
     }
 
     void validateFoodInput(FoodInput food) {
@@ -32,6 +31,9 @@ public class FoodService {
         if (StringUtils.isBlank(food.getBrand())) {
             throw new IllegalArgumentException("Food brand '" + food.getBrand() + "' must contain more than whitespace.");
         }
+
+        food.setBrand(StringUtils.trim(food.getBrand()));
+        food.setName(StringUtils.trim(food.getName()));
 
         if (foodRepository.existsByNameAndBrand(food.getName(), food.getBrand())) {
             throw new IllegalArgumentException("Food with name '" + food.getName() + "' and brand '" + food.getBrand() + "' already exists.");

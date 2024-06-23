@@ -7,12 +7,43 @@ type Mutation {
 }
 
 input FoodInput {
-    brand: String!
-    name: String!
+    id: ID
+    brand: String
+    name: String
+    protein: Float
+    fat: Float
+    carb: Float
+    fiber: Float
+    calories: Float
+    servingAmount: Float
+    servingUnit: ServingUnitEnum
+    servingSize: ServingSizeEnum
 }
 
 type FoodDto {
     id: ID!
     brand: String!
     name: String!
+    protein: Float
+    fat: Float
+    carb: Float
+    fiber: Float
+    calories: Float
+    servingAmount: Float
+    servingUnit: ServingUnitEnum
+    servingSize: ServingSizeEnum
+}
+
+enum ServingUnitEnum {
+    G
+    ML
+}
+
+enum ServingSizeEnum {
+    ML
+    TSP
+    TBSP
+    CUP
+    G
+    OUNCE
 }

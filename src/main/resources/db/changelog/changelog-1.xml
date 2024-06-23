@@ -12,7 +12,7 @@
     <property name="uuidType" value="UNIQUEIDENTIFIER" dbms="mssql"/>
     <property name="uuidType" value="UUID" dbms="h2"/>
 
-    <changeSet id="create-food-table" author="your-name">
+    <changeSet id="create-food-table" author="jdroettger">
         <createTable tableName="food">
             <column name="id" type="${uuidType}">
                 <constraints primaryKey="true"/>
@@ -21,5 +21,16 @@
             <column name="name" type="${varcharType}"/>
         </createTable>
     </changeSet>
-
+    <changeSet id="add-nutrition-columns-to-food-table" author="jdroettger">
+        <addColumn tableName="food">
+            <column name="protein" type="DECIMAL(19,6)"/>
+            <column name="fat" type="DECIMAL(19,6)"/>
+            <column name="carb" type="DECIMAL(19,6)"/>
+            <column name="fiber" type="DECIMAL(19,6)"/>
+            <column name="calories" type="DECIMAL(19,6)"/>
+            <column name="serving_amount" type="DECIMAL(19,6)"/>
+            <column name="serving_unit" type="VARCHAR(32)"/>
+            <column name="serving_size" type="VARCHAR(32)"/>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>
