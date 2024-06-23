@@ -16,8 +16,8 @@ input FoodInput {
     fiber: Float
     calories: Float
     servingAmount: Float
-    servingUnit: ServingUnitEnum
-    servingSize: ServingSizeEnum
+    servingUnit: ServingUnit
+    servingSize: ServingSize
 }
 
 type FoodDto {
@@ -30,16 +30,16 @@ type FoodDto {
     fiber: Float
     calories: Float
     servingAmount: Float
-    servingUnit: ServingUnitEnum
-    servingSize: ServingSizeEnum
+    servingUnit: ServingUnit
+    servingSize: ServingSize
 }
 
-enum ServingUnitEnum {
+enum ServingUnit {
     G
     ML
 }
 
-enum ServingSizeEnum {
+enum ServingSize {
     ML
     TSP
     TBSP
