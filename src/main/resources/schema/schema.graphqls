@@ -3,7 +3,7 @@ type Query {
 }
 
 type Mutation {
-    addFood(input: FoodInput!): FoodDto!
+    addFood(food: FoodInput!): FoodDto!
 }
 
 input FoodInput {

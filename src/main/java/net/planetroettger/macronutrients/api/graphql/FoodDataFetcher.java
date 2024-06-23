@@ -27,7 +27,7 @@ public class FoodDataFetcher {
     }
 
     @DgsMutation
-    public FoodDto addFood(@InputArgument("input") FoodInput food) {
+    public FoodDto addFood(@InputArgument() FoodInput food) {
         return foodService.addFood(food);
     }
 }

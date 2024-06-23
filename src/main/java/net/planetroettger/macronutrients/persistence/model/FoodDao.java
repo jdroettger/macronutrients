@@ -1,6 +1,9 @@
 package net.planetroettger.macronutrients.persistence.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,9 +23,7 @@ public class FoodDao {
     @GeneratedValue
     private UUID id;
 
-    @Column(length = 255)
     private String brand;
 
-    @Column(length = 255)
     private String name;
 }
