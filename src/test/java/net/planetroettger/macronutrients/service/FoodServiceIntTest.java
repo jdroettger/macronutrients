@@ -39,9 +39,7 @@ class FoodServiceIntTest {
         foodService.addFood(foodInput);
 
         // Try to add the same food item again
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            foodService.addFood(foodInput);
-        });
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> foodService.addFood(foodInput));
 
         String expectedMessage = "Food with name '" + foodInput.getName() + "' and brand '" + foodInput.getBrand() + "' already exists.";
         String actualMessage = exception.getMessage();

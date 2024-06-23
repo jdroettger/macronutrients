@@ -1,5 +1,8 @@
 package net.planetroettger.macronutrients.persistence.model;
 
+import lombok.Getter;
+
+@Getter
 public enum ServingSizeEnum {
     ML("ml"),
     TSP("tsp"),
@@ -8,13 +11,10 @@ public enum ServingSizeEnum {
     G("g"),
     OUNCE("ounce");
 
-    private String size;
+    private final String size;
 
     ServingSizeEnum(String size) {
         this.size = size;
     }
 
-    public String getSize() {
-        return size;
-    }
 }

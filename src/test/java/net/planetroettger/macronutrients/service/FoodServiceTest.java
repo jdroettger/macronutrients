@@ -36,9 +36,7 @@ class FoodServiceTest {
         FoodInput duplicateFood = createFoodInput(duplicateName, duplicateBrand);
 
         // When
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            foodService.validateFoodInput(duplicateFood);
-        });
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> foodService.validateFoodInput(duplicateFood));
 
         // Then
         String expectedMessage = "Food with name '" + duplicateName + "' and brand '" + duplicateBrand + "' already exists.";
@@ -52,9 +50,7 @@ class FoodServiceTest {
         lenient().when(foodRepository.existsByNameAndBrand(foodInput.getName(), foodInput.getBrand())).thenReturn(false);
 
         // When
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            foodService.validateFoodInput(foodInput);
-        });
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> foodService.validateFoodInput(foodInput));
 
         // Then
         assertEquals(expectedMessage, exception.getMessage());
